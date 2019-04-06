@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Search from configs</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/bootstrap.min.css">
+  </head>
+  <body>
+  <div class="container">
+    <h1  align="center">Добро пожаловать или посторонним вход воспрещен</h1>
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Поисковая строка и область поиска</span>
+      </div>
+        <input id='search_string' type="text" aria-label="search_string" class="form-control" placeholder="search\ text or ip address">
+        <input id='domain' type="text" aria-label="domain" class="form-control" placeholder="MSN_66_ or loopback or nothing">
+      </div>
+      <table align="center">
+        <tr>
+          <td>
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-secondary search">Search</button>
+              <button type="button" class="btn btn-secondary hide">HideResult</button>
+              <button type="button" class="btn btn-secondary copy">CopyToClipboard</button>
+            </div>
+          </td>
+        </tr>
+      </table>
+  <div class="ex3" id='result'>
+    Lorem ipsum dolor sit amet, <br>consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+  </div>
+
+
+  </div><!-- # end container -->
+
+  </body>
+  <script src="static/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="static/search_app.js"></script>
+  <script src="static/popper.min.js"></script>
+  <script type="text/javascript" src="static/bootstrap.min.js">
+
+  </script>
+</html>
