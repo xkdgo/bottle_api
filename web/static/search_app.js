@@ -19,7 +19,7 @@ $('.search').on('click', function () {
 
 
 $('.hide').on('click', function () {
-  $('p').fadeOut('slow')
+  $('#result').fadeOut('slow')
 })
 
 
