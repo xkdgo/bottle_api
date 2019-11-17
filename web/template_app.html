@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generate Templates</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+      <h1  align="center">Генерация конфигураций</h1>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Генерация шаблона BSC</span>
+               <form id="upload-file-bsc" method="post" enctype="multipart/form-data" name="upload-file-bsc">
+                 <div class="form-group">
+                   <label for="bsc-template-file">Загрузите файл с даннымии</label>
+                   <input type="file" class="form-control-file" id="bsc-template-file" name="uploadfile">
+                 </div>
+
+               </form>
+              <table align="center">
+                <tr>
+                  <td>
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                      <button type="submit" class="btn btn-secondary btn-template-bsc">BSC</button>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+          </div>
+
+  </div><!-- # end container -->
+</body>
+  <script src="static/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="static/template_app.js"></script>
+  <script src="static/popper.min.js"></script>
+  <script type="text/javascript" src="static/bootstrap.min.js">
+  </script>
+</html>
