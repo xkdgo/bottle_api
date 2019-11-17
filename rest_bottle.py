@@ -4,6 +4,9 @@ from bottle import request, response, hook
 from bottle import post
 import json
 import subprocess
+import os
+
+
 
 
 _allow_origin = '*'
@@ -15,7 +18,7 @@ def cmd_handler(cmd):
     result_lst = []
     p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     for line in p.stdout.readlines():
-        result_lst.append(line)
+        result_lst.append(line.decode("utf-8"))
     _ = p.wait()
     return "<br>".join(result_lst)
 
@@ -59,6 +62,22 @@ def creation_handler():
     # return 200 Success
     response.headers['Content-Type'] = 'application/json'
     return json.dumps(result_dict)
+
+
+@route('/upload', method='POST')
+def do_upload():
+    # get FileUpload object
+    upload = request.files.get('0')
+    print(request.files.get('0').filename)
+    name = upload.filename
+    category = "bsc"
+    save_path = "tmp/{category}".format(category=category)
+    if not os.path.exists(save_path):
+        os.makedirs(save_path)
+    file_path = os.path.join(save_path, name)
+    # TODO  check upload.content_type
+    upload.save(file_path)
+    return "File successfully saved to '{0}'.".format(save_path)
 
 
 @hook('after_request')
